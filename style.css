@@ -1,0 +1,340 @@
+body {
+    display: grid;
+    grid-template-areas: 
+    'short info'
+    'skills info'
+    'ed info';
+    grid-gap: 1px;
+    min-height: 100vh;
+    margin: 10px auto 0;
+    max-width: 1000px;
+    grid-template-rows: 300px 20% 1fr;
+    grid-template-columns: 25% 1fr;
+    background-color: #7a84dd;
+    color: rgb(41, 37, 37);
+}
+li::marker {
+    content: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+.about {
+    grid-area: short;
+    background:honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.about__item_animated {
+    animation-name: about;
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+}
+@keyframes about {
+    0% {
+        padding: 0;
+        color: honeydew;
+        background-image: none;
+    } 90% {
+        background-image: none;
+    } 
+}
+.about__photo {
+    margin-top: 5px;
+    height: 50%;
+    border-radius: 10%;
+    width: max-content;
+    align-self: center;
+    border: 1px solid grey;
+}
+.about__item {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.about__tel {
+    background-image: url(./img/phone-call.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 10%;
+
+    /* animation-name: about__tel;
+    animation-duration: 5s;
+    animation-delay: 0.5s; */
+}
+.about__email {
+    background-image: url(./img/email.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 10%;
+}
+.about__vk {
+    background-image: url(./img/vk.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 10%;
+}
+.about__git {
+    background-image: url(./img/github.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 10%;
+}
+.about__city {
+    background-image: url(./img/home.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 10%;
+}
+
+
+
+
+.info {
+    grid-area: info;
+    background:rgb(158, 152, 163);
+    font-family: sans-serif;
+}
+.info__header {
+    margin: 5% 10% ;
+}
+.info__position {
+    margin: 0 auto;
+    font-size: 280%;
+    align-content: center;
+    width: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.info__name {
+    margin: 35px auto;
+    width: fit-content;
+    font-size: 250%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.info-work {
+    display: grid;
+    grid-template-areas: 
+    'position position year year'
+    'resp resp photo photo';
+    grid-gap: 1px;
+    grid-template-columns: 1fr 4fr 2fr 1fr;
+    margin-bottom: 20px;
+}
+.info__title {
+    grid-area: position;
+    margin: 10px 30px;
+    font-size: 120%;
+}
+.info__years {
+    grid-area: year;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 120%;
+}
+.info__text {
+    grid-area: resp;
+    margin-left: 20px;
+    font-size: 110%;
+    line-height: 120%;
+}
+.info__text li {
+    font-size: 80%;
+}
+.info__text li:nth-child(1n)::before {
+    content: '-';
+}
+.info__photo {
+    grid-area: photo;
+}
+
+
+
+.tecnologies {
+    padding: 20px 30px;
+    border-top: 1px solid #7a84dd;
+}
+
+
+
+.skills {
+    grid-area: skills;
+    background:honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.skills_animated {
+    animation-name: skill;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+@keyframes skill {
+    0% {
+    } 30% {
+        color: honeydew;
+    } 100% {
+    }
+}
+.skills__title {
+    align-self: center;
+    margin: 10px 0;
+}
+.skills__item {
+    padding: 5px 10px;
+}
+.skills__item::before {
+    content: '-';
+}
+
+
+
+
+.education {
+    grid-area: ed;
+    background:honeydew;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.education__title {
+    align-self: center;
+    margin: 10px 0;
+}
+.education-item {
+    padding: 5px 15px;
+}
+.education-item__bottom_border {
+    margin: 2px 0;
+    border: 0.1px solid black;
+}
+.education-item__years {
+    margin-left: 50%;
+}
+.education-item__spec {
+    font-size: 100%;
+    margin: 0 auto;
+}
+.education-item__university {
+    font-style: italic;
+    font-size: 80%;
+}
+
+
+
+@media (max-width: 1010px) {
+    body {
+        max-width: 800px;
+        grid-template-columns: 30% 1fr;
+        grid-template-rows: 300px 21% 1fr;
+    }
+    .info {
+        font-size: 14px;
+    }
+    .info__title {
+        font-size: 100%;
+    }
+    .info__years {
+        font-size: 100%;
+    }
+}
+@media (max-width: 810px) {
+    body {
+        max-width: 500px;
+        grid-template-areas: 
+         'short short skills skills'
+         'ed info info info';
+        grid-template-columns: 3fr 2fr 2fr 3fr;
+        grid-template-rows: 300px 1fr ;
+    }
+    .skills {
+        flex-wrap: wrap;
+        padding-top: 40px;
+    }
+    .skills__title {
+        position: absolute;
+        top:0;
+    }
+    .info-work {
+        grid-template-areas: 
+        'position position year year'
+        'resp resp resp photo';
+        grid-gap: 1px;
+        grid-template-columns: 1fr 4fr 3fr 0fr;
+    }
+    .info__header {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .info__title {
+        font-size: 100%;
+    }
+    .info__photo {
+        display: none;
+    }
+    .education-item__years {
+        margin-left: 25%;
+    }
+    .education__title {
+        align-self: center;
+        margin: 10px 20px;
+    }
+}
+@media (max-width: 500px) {
+    body {
+        max-width: 300px;
+        grid-template-areas: 
+         'short'
+         'skills'
+         'info'
+         'ed';
+        grid-template-columns: 100%;
+        grid-template-rows: 300px 12% 1fr 22%;
+        margin: 0 auto;
+        min-width: 230px;
+    }
+    .about__item {
+        width: 230px;
+        margin: 10px auto 0;
+    }
+    .about__item a {
+        margin-left: 5px;
+    }
+    .about__item address {
+        margin-left: 5px;
+    }
+    .info {
+        margin-top: 20px;
+    }
+    .info-work {
+        grid-template-areas: 
+        'position position year year'
+        'resp resp resp photo';
+        grid-gap: 1px;
+        grid-template-columns: 2fr 4fr 2fr 0fr;
+    }
+    .skills {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+    .skills__title {
+        position: static;
+    }
+    .education {
+        margin: 20px 0;
+    }
+    .education-item {
+        display: flex;
+        flex-direction: column;
+    }
+    .education-item__years {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+};
