@@ -1,3 +1,13 @@
+:root {
+    --bg-col:#fff;
+    --bg-left-col: #373737;
+    --bg-right-col: #dfdde0;
+    --info-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --right-text-colog: rgb(41, 37, 37);
+    --left-text-color: #dfdde0;
+
+}
+
 body {
     display: grid;
     grid-template-areas: 
@@ -8,10 +18,10 @@ body {
     min-height: 100vh;
     margin: 10px auto 0;
     max-width: 1000px;
-    grid-template-rows: 300px 20% 1fr;
+    grid-template-rows: 300px 1fr;
     grid-template-columns: 25% 1fr;
-    background-color: #7a84dd;
-    color: rgb(41, 37, 37);
+    background-color: var(--bg-col);
+    color: var(--left-text-color);
 }
 li::marker {
     content: none;
@@ -26,7 +36,7 @@ a {
 
 .about {
     grid-area: short;
-    background:honeydew;
+    background:var(--bg-left-col);
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -39,7 +49,7 @@ a {
 @keyframes about {
     0% {
         padding: 0;
-        color: honeydew;
+        color: var(--bg-left-col);
         background-image: none;
     } 90% {
         background-image: none;
@@ -58,7 +68,7 @@ a {
     margin-top: 10px;
 }
 .about__tel {
-    background-image: url(./img/phone-call.png);
+    background-image: url(./img/phone_call_negate.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 10%;
@@ -68,25 +78,25 @@ a {
     animation-delay: 0.5s; */
 }
 .about__email {
-    background-image: url(./img/email.png);
+    background-image: url(./img/email_negate.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 10%;
 }
 .about__vk {
-    background-image: url(./img/vk.png);
+    background-image: url(./img/vk_negate.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 10%;
 }
 .about__git {
-    background-image: url(./img/github.png);
+    background-image: url(./img/github_negate.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 10%;
 }
 .about__city {
-    background-image: url(./img/home.png);
+    background-image: url(./img/home_negate.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 10%;
@@ -97,8 +107,9 @@ a {
 
 .info {
     grid-area: info;
-    background:rgb(158, 152, 163);
+    background:var(--bg-right-col);
     font-family: sans-serif;
+    color: var(--right-text-colog);
 }
 .info__header {
     margin: 5% 10% ;
@@ -108,13 +119,13 @@ a {
     font-size: 280%;
     align-content: center;
     width: fit-content;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--info-font);
 }
 .info__name {
     margin: 35px auto;
     width: fit-content;
     font-size: 250%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--info-font);
 }
 .info-work {
     display: grid;
@@ -159,14 +170,14 @@ a {
 
 .tecnologies {
     padding: 20px 30px;
-    border-top: 1px solid #7a84dd;
+    border-top: 1px solid var(--bg-col);
 }
 
 
 
 .skills {
     grid-area: skills;
-    background:honeydew;
+    background:var(--bg-left-col);
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -180,7 +191,7 @@ a {
 @keyframes skill {
     0% {
     } 30% {
-        color: honeydew;
+        color: var(--bg-left-col);
     } 100% {
     }
 }
@@ -200,7 +211,7 @@ a {
 
 .education {
     grid-area: ed;
-    background:honeydew;
+    background:var(--bg-left-col);
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -214,7 +225,7 @@ a {
 }
 .education-item__bottom_border {
     margin: 2px 0;
-    border: 0.1px solid black;
+    border: 0.1px solid var(--bg-col);
 }
 .education-item__years {
     margin-left: 50%;
